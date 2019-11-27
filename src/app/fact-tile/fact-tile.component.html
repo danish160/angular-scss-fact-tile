@@ -1,21 +1,19 @@
-<div [class]="'fact-box fact-tile-'+[colour]" [style]="[style]">
-    <div class="fact-inner">
-        <h1 *ngIf="fact || fact === 0">
-            <strong>{{fact}}</strong>
-            <small *ngIf="trend">
-                <i [class]="trendcssclass" aria-hidden="true"></i>
-                {{trend}}
-            </small>
-        </h1>
-        <h1 [hidden]="fact || fact === 0"><i class="fa fa-spinner fa-pulse"></i></h1>
-    </div>
-    <div [class]="'fact-box-footer fact-box-inline fact-tile-' + [colour] + ' ' + [paddingClass]">
-        <div class="fact-box-wrap">
-            <p>
-                <small>
-                    {{desc}}
-                </small>
-            </p>
-        </div>
-    </div>
+<div [class]="'fact-tile fact-tile-'+[colour]" [style]="[style]">
+	<div class="fact-inner">
+		<h1 *ngIf="fact || fact === 0">
+			<strong>{{fact}}</strong>
+			<small *ngIf="trend">
+        <i [class]="trendcssclass" aria-hidden="true"></i>
+        {{trend}}
+			</small>
+		</h1>
+		<h1 [hidden]="fact || fact === 0"><i class="fa fa-spinner fa-pulse"></i></h1>
+	</div>
+	<div [class]="'fact-footer ' + [paddingClass]">
+		<div class="fact-box-wrap">
+			<p>
+				<small>{{desc}}</small>
+			</p>
+		</div>
+	</div>
 </div>

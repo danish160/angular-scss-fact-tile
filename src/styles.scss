@@ -1,8 +1,7 @@
 @import "~bootstrap/scss/bootstrap";
 
-
 /* Add application styles & imports to this file! */
-@import './styles/variables';
+@import "./styles/variables";
 // p {
 //   background-color: grey;
 // }
@@ -37,87 +36,92 @@ $fact-tile-colors: map-merge(
 @each $color, $value in $fact-tile-colors {
   .fact-tile-#{$color} {
     @include fact-tile-variant($value);
+
+    .fact-footer {
+      @include fact-tile-box-variant($value);
+    }
   }
-  .fact-box-footer.fact-tile-#{$color} {
-    @include fact-tile-box-variant($value);
-  }
-  a .fact-box:hover.fact-tile-#{$color} {
-    background-color: lighten($value, 10);
-  }
-   a .fact-box:hover.fact-tile-#{$color} .fact-box-footer {
-    background-color: lighten($value, 4);
+  a .fact-tile-#{$color} {
+    &:hover {
+      background-color: lighten($value, 10);
+
+      .fact-footer {
+        background-color: lighten($value, 4);
+      }
+    }
   }
 }
 
-.fact-box h1 {
-  color: $white;
-  text-align: center;
-  padding: 20px 5px 10px 5px;
-}
-.fact-box i {
-  color: $white;
-  text-align: center;
-}
-.fact-box h4 {
-  color: $white;
-  text-align: center;
-  padding: 15px 5px 0px 5px;
-}
-.fact-box small {
-  color: $white;
-  text-align: center;
-  padding: 0 5px;
-}
-.fact-box p {
-  color: #fff;
-  text-align: center;
-  padding: 0 5px;
-}
-
-.fact-box .fact-inner {
-  height: 75px;
-  text-align: center;
-}
-.fact-padding1 {
-  padding-top: 15px;
-}
-.fact-padding2 {
-  padding-top: 5px;
-}
-.text-inner {
-  min-height: 66px;
-}
-.fact-box {
+.fact-tile {
   height: 128px;
-}
-.fact-box-footer {
-  height: 50px;
-  width: 100%;
-  text-align: center;
-  line-height: 14px;
-  padding-left: 2px;
-  padding-right: 2px;
-  line-height: normal;
-  padding-top: 0;
-}
-.fact-box-inline {
-  display: inline-block;
-}
-.fact-box-wrap {
-  display: table;
-  height: 50px;
-  padding: 0;
-  width: 100%;
-}
-.fact-box-wrap p {
-  display: table-cell;
-  vertical-align: middle;
-}
-.fact-box i.trendUp {
-  color: $lime;
-  font-weight: bold;
-}
-.fact-box i.trendDown {
-  color: $fuchsia;
-  font-weight: bold;
+
+  h1 {
+    color: $white;
+    text-align: center;
+    padding: 20px 5px 10px 5px;
+  }
+
+  i {
+    color: $white;
+    text-align: center;
+  }
+
+  h4 {
+    color: $white;
+    text-align: center;
+    padding: 15px 5px 0px 5px;
+  }
+
+  small {
+    color: $white;
+    text-align: center;
+    padding: 0 5px;
+  }
+
+  p {
+    color: #fff;
+    text-align: center;
+    padding: 0 5px;
+  }
+
+  .fact-inner {
+    height: 75px;
+    text-align: center;
+  }
+
+  .fact-padding1 {
+    padding-top: 15px;
+  }
+  .fact-padding2 {
+    padding-top: 5px;
+  }
+  .text-inner {
+    min-height: 66px;
+  }
+  .fact-footer {
+    height: 50px;
+    width: 100%;
+    text-align: center;
+    // line-height: 14px;
+    padding-left: 2px;
+    padding-right: 2px;
+    line-height: normal;
+    padding-top: 0;
+    display: inline-block;
+    padding: 0;
+
+    p {
+      display: table-cell;
+      vertical-align: middle;
+    }
+  }
+
+  i.trendUp {
+    color: $lime;
+    font-weight: bold;
+  }
+  i.trendDown {
+    color: $fuchsia;
+    font-weight: bold;
+  }
 }
