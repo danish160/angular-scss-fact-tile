@@ -49,6 +49,10 @@ $fact-tile-colors: map-merge(
   }
 }
 
+a.fact {
+  text-decoration: none;
+}
+
 .fact-tile {
   height: 128px;
 
@@ -76,7 +80,7 @@ $fact-tile-colors: map-merge(
   }
 
   p {
-    color: #fff;
+    color: $white;
     text-align: center;
     padding: 0 5px;
   }
