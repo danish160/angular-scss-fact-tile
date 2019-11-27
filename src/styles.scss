@@ -1,0 +1,123 @@
+@import "~bootstrap/scss/bootstrap";
+
+
+/* Add application styles & imports to this file! */
+@import './styles/variables';
+// p {
+//   background-color: grey;
+// }
+
+@import "variables.scss";
+
+@mixin fact-tile-variant($bg) {
+  background-color: $bg;
+  transition: background-color 0.5s ease;
+}
+
+// TODO: there must be a way to define this is as a nested style in the mixin above, to avoid repition
+@mixin fact-tile-box-variant($bg) {
+  background-color: darken($color: $bg, $amount: 8);
+  transition: background-color 0.5s ease;
+}
+
+$fact-tile-colors: () !default;
+$fact-tile-colors: map-merge(
+  (
+    "navy": $navy,
+    "blue": $govt-blue,
+    "purple": $purple,
+    "red": $red,
+    "orange": $orange,
+    "teal": $teal,
+    "gray": $gray
+  ),
+  $fact-tile-colors
+);
+
+@each $color, $value in $fact-tile-colors {
+  .fact-tile-#{$color} {
+    @include fact-tile-variant($value);
+  }
+  .fact-box-footer.fact-tile-#{$color} {
+    @include fact-tile-box-variant($value);
+  }
+  a .fact-box:hover.fact-tile-#{$color} {
+    background-color: lighten($value, 10);
+  }
+   a .fact-box:hover.fact-tile-#{$color} .fact-box-footer {
+    background-color: lighten($value, 4);
+  }
+}
+
+.fact-box h1 {
+  color: $white;
+  text-align: center;
+  padding: 20px 5px 10px 5px;
+}
+.fact-box i {
+  color: $white;
+  text-align: center;
+}
+.fact-box h4 {
+  color: $white;
+  text-align: center;
+  padding: 15px 5px 0px 5px;
+}
+.fact-box small {
+  color: $white;
+  text-align: center;
+  padding: 0 5px;
+}
+.fact-box p {
+  color: #fff;
+  text-align: center;
+  padding: 0 5px;
+}
+
+.fact-box .fact-inner {
+  height: 75px;
+  text-align: center;
+}
+.fact-padding1 {
+  padding-top: 15px;
+}
+.fact-padding2 {
+  padding-top: 5px;
+}
+.text-inner {
+  min-height: 66px;
+}
+.fact-box {
+  height: 128px;
+}
+.fact-box-footer {
+  height: 50px;
+  width: 100%;
+  text-align: center;
+  line-height: 14px;
+  padding-left: 2px;
+  padding-right: 2px;
+  line-height: normal;
+  padding-top: 0;
+}
+.fact-box-inline {
+  display: inline-block;
+}
+.fact-box-wrap {
+  display: table;
+  height: 50px;
+  padding: 0;
+  width: 100%;
+}
+.fact-box-wrap p {
+  display: table-cell;
+  vertical-align: middle;
+}
+.fact-box i.trendUp {
+  color: $lime;
+  font-weight: bold;
+}
+.fact-box i.trendDown {
+  color: $fuchsia;
+  font-weight: bold;
+}
