@@ -2,9 +2,6 @@
 
 /* Add application styles & imports to this file! */
 @import "./styles/variables";
-// p {
-//   background-color: grey;
-// }
 
 @import "variables.scss";
 
@@ -99,21 +96,11 @@ $fact-tile-colors: map-merge(
     min-height: 66px;
   }
   .fact-footer {
+    line-height: 50px;
     height: 50px;
     width: 100%;
     text-align: center;
-    // line-height: 14px;
-    padding-left: 2px;
-    padding-right: 2px;
-    line-height: normal;
-    padding-top: 0;
     display: inline-block;
-    padding: 0;
-
-    p {
-      display: table-cell;
-      vertical-align: middle;
-    }
   }
 
   i.trendUp {

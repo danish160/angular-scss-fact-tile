@@ -19,10 +19,10 @@ export class FactTileComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
-    if (this.rows === 1) {
-      this.paddingClass = "fact-padding1";
-    } else {
-      this.paddingClass = "fact-padding2";
-    }
+    // if (this.rows === 1) {
+    //   this.paddingClass = "fact-padding1";
+    // } else {
+    //   this.paddingClass = "fact-padding2";
+    // }
   }
 }
