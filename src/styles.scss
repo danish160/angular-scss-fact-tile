@@ -1,22 +1,5 @@
 @import "~bootstrap/scss/bootstrap";
 
-
-// Color contrast
-@function color-yiq($color, $dark: $yiq-text-dark, $light: $yiq-text-light) {
-  $r: red($color);
-  $g: green($color);
-  $b: blue($color);
-
-  $yiq: (($r * 299) + ($g * 587) + ($b * 114)) / 1000;
-
-  @if ($yiq >= $yiq-contrasted-threshold) {
-    @return $dark;
-  } @else {
-    @return $light;
-  }
-}
-
-
 /* Add application styles & imports to this file! */
 @import "./styles/variables";
 
@@ -29,7 +12,8 @@
 }
 
 // TODO: there must be a way to define this is as a nested style in the mixin above, to avoid repition
-@mixin fact-tile-box-variant($bg) {
+@mixin fact-tile-footer-variant($bg) {
+  color: color-yiq(darken($color: $bg, $amount: 8));
   background-color: darken($color: $bg, $amount: 8);
   transition: background-color 0.5s ease;
 }
@@ -54,7 +38,7 @@ $fact-tile-colors: map-merge(
     @include fact-tile-variant($value);
 
     .fact-footer {
-      @include fact-tile-box-variant($value);
+      @include fact-tile-footer-variant($value);
     }
   }
   a .fact-tile-#{$color} {
@@ -82,24 +66,24 @@ a.fact {
   }
 
   i {
-    color: $white;
+    // color: $white;
     text-align: center;
   }
 
   h4 {
-    color: $white;
+    // color: $white;
     text-align: center;
     padding: 15px 5px 0px 5px;
   }
 
   small {
-    color: $white;
+    // color: $white;
     text-align: center;
     padding: 0 5px;
   }
 
   p {
-    color: $white;
+    // color: $white;
     text-align: center;
     padding: 0 5px;
   }
