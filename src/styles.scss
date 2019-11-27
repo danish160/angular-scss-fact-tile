@@ -1,11 +1,29 @@
 @import "~bootstrap/scss/bootstrap";
 
+
+// Color contrast
+@function color-yiq($color, $dark: $yiq-text-dark, $light: $yiq-text-light) {
+  $r: red($color);
+  $g: green($color);
+  $b: blue($color);
+
+  $yiq: (($r * 299) + ($g * 587) + ($b * 114)) / 1000;
+
+  @if ($yiq >= $yiq-contrasted-threshold) {
+    @return $dark;
+  } @else {
+    @return $light;
+  }
+}
+
+
 /* Add application styles & imports to this file! */
 @import "./styles/variables";
 
 @import "variables.scss";
 
 @mixin fact-tile-variant($bg) {
+  color: color-yiq($bg);
   background-color: $bg;
   transition: background-color 0.5s ease;
 }
@@ -21,6 +39,7 @@ $fact-tile-colors: map-merge(
   (
     "navy": $navy,
     "blue": $govt-blue,
+    "light-blue": $light-blue,
     "purple": $purple,
     "red": $red,
     "orange": $orange,
@@ -57,7 +76,7 @@ a.fact {
   height: 128px;
 
   h1 {
-    color: $white;
+    // color: $white;
     text-align: center;
     padding: 20px 5px 10px 5px;
   }
