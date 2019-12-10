@@ -11,7 +11,6 @@
   transition: background-color 0.5s ease;
 }
 
-// TODO: there must be a way to define this is as a nested style in the mixin above, to avoid repition
 @mixin fact-tile-footer-variant($bg) {
   color: color-yiq(darken($color: $bg, $amount: 8));
   background-color: darken($color: $bg, $amount: 8);
@@ -57,57 +56,39 @@ a.fact {
 }
 
 .fact-tile {
-  height: 128px;
+  height: 133px;
+  width: 183px;
+  margin-bottom: 10px;
 
   h1 {
-    // color: $white;
-    text-align: center;
-    padding: 20px 5px 10px 5px;
+    // color: inherit;
+    margin: 0;
   }
 
   i {
-    // color: $white;
     text-align: center;
   }
 
   h4 {
-    // color: $white;
-    text-align: center;
+    color: inherit;
     padding: 15px 5px 0px 5px;
   }
 
-  small {
-    // color: $white;
-    text-align: center;
-    padding: 0 5px;
-  }
+  // small {
+  //   color: inherit;
+  // }
 
   p {
-    // color: $white;
-    text-align: center;
+    color: inherit;
     padding: 0 5px;
   }
 
   .fact-inner {
-    height: 75px;
-    text-align: center;
+    height: 60%;
   }
 
-  .fact-padding1 {
-    padding-top: 15px;
-  }
-  .fact-padding2 {
-    padding-top: 5px;
-  }
-  .text-inner {
-    min-height: 66px;
-  }
   .fact-footer {
-    line-height: 50px;
-    height: 50px;
-    width: 100%;
-    text-align: center;
-    display: inline-block;
+    height: 40%;
   }
 
   i.trendUp {
