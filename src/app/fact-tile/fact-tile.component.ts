@@ -13,8 +13,6 @@ export class FactTileComponent implements OnInit {
   @Input() colour: string;
   @Input() rows: number;
   @Input() style: string;
-  paddingClass: string;
-  asd2a2sd = 0;
 
   constructor() {}
 
