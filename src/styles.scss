@@ -1,8 +1,6 @@
 @import "~bootstrap/scss/bootstrap";
 
 /* Add application styles & imports to this file! */
-@import "./styles/variables";
-
 @import "variables.scss";
 
 @mixin fact-tile-variant($bg) {
@@ -61,26 +59,11 @@ a.fact {
   margin-bottom: 10px;
 
   h1 {
-    // color: inherit;
     margin: 0;
   }
 
   i {
     text-align: center;
-  }
-
-  h4 {
-    color: inherit;
-    padding: 15px 5px 0px 5px;
-  }
-
-  // small {
-  //   color: inherit;
-  // }
-
-  p {
-    color: inherit;
-    padding: 0 5px;
   }
 
   .fact-inner {
